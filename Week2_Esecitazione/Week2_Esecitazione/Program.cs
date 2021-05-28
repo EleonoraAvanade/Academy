@@ -55,14 +55,17 @@ namespace Week2_Esecitazione
             ArrayList Tasks = new ArrayList();
             Console.WriteLine("Ecco gestione Task, puoi:\n");
             while (true) {
-                Console.WriteLine(
-                "1 - Vedere i task inseriti\n" +
-                "2 - Aggiungere un nuovo task\n" +
-                "3 - Eliminare un task\n" +
-                "4 - Filtrare i task per importanza\n\n" +
-                "Per uscire premere un qualunque altro tasto");
                 int choice = 0;
-                Int32.TryParse(Console.ReadLine(), out choice);
+                do
+                {
+                    Console.WriteLine(
+                    "1 - Vedere i task inseriti\n" +
+                    "2 - Aggiungere un nuovo task\n" +
+                    "3 - Eliminare un task\n" +
+                    "4 - Filtrare i task per importanza\n\n" +
+                    "Per uscire premere un qualunque altro tasto");
+                }
+                while (!Int32.TryParse(Console.ReadLine(), out choice));
                 switch (choice)
                 {
                     case 1:
