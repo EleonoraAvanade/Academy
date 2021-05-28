@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections;
+using System.Globalization;
 
 namespace Week2_Esecitazione
 {
@@ -72,7 +73,15 @@ namespace Week2_Esecitazione
                         Console.WriteLine("Inserisci una descrizione e premi invio:\n");
                         obj.setDes(Console.ReadLine());
                         Console.WriteLine("Inserisci una scadenza (gg/mm/YY) e premi invio:\n");
-                        obj.setSc(Convert.ToDateTime(Console.ReadLine()));
+                        var cultureInfo = new CultureInfo("en-US");
+                        DateTime dt = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", cultureInfo, DateTimeStyles.AdjustToUniversal);
+                        while (DateTime.Now >= dt)
+                        {
+                            Console.WriteLine("Immetti una data futura\n");
+                            Console.WriteLine("Inserisci una scadenza (gg/mm/YY) e premi invio:\n");
+                            dt = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", cultureInfo, DateTimeStyles.AdjustToUniversal);
+                        }
+                        obj.setSc(dt);
                         Console.WriteLine("Inserisci una importanza e premi invio:\n");
                         Int32.TryParse(Console.ReadLine(), out int tmp);
                         obj.setImportanza((byte)tmp);
