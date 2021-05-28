@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eleonora.lombardo\\source\\repos\\Week2_Esecitazione\\Week2_Esecitazione\\Week2_Esecitazione.csproj",
+      "projectUniqueName": "C:\\Users\\eleonora.lombardo\\Desktop\\Prove\\Week2_Esecitazione\\Week2_Esecitazione\\Week2_Esecitazione.csproj",
       "projectName": "Week2_Esecitazione",
-      "projectPath": "C:\\Users\\eleonora.lombardo\\source\\repos\\Week2_Esecitazione\\Week2_Esecitazione\\Week2_Esecitazione.csproj",
+      "projectPath": "C:\\Users\\eleonora.lombardo\\Desktop\\Prove\\Week2_Esecitazione\\Week2_Esecitazione\\Week2_Esecitazione.csproj",
       "packagesPath": "C:\\Users\\eleonora.lombardo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eleonora.lombardo\\source\\repos\\Week2_Esecitazione\\Week2_Esecitazione\\obj\\",
+      "outputPath": "C:\\Users\\eleonora.lombardo\\Desktop\\Prove\\Week2_Esecitazione\\Week2_Esecitazione\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
