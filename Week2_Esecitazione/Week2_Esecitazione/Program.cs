@@ -77,16 +77,28 @@ namespace Week2_Esecitazione
                         obj.setDes(Console.ReadLine());
                         Console.WriteLine("Inserisci una scadenza (gg/mm/YY) e premi invio:\n");
                         var cultureInfo = new CultureInfo("en-US");
-                        DateTime dt = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", cultureInfo, DateTimeStyles.AdjustToUniversal);
-                        while (DateTime.Now >= dt)
+                        DateTime dt=DateTime.Parse("1/1/1111");
+                        try
                         {
-                            Console.WriteLine("Immetti una data futura\n");
-                            Console.WriteLine("Inserisci una scadenza (gg/mm/YY) e premi invio:\n");
-                            dt = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", cultureInfo, DateTimeStyles.AdjustToUniversal);
+                            dt= DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", cultureInfo, DateTimeStyles.AdjustToUniversal);
+                            while (DateTime.Now >= dt)
+                            {
+                                Console.WriteLine("Immetti una data futura\n");
+                                Console.WriteLine("Inserisci una scadenza (gg/mm/YY) e premi invio:\n");
+                                dt = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", cultureInfo, DateTimeStyles.AdjustToUniversal);
+                            }
+                        }
+                        catch(FormatException e)
+                        {
+                            Console.WriteLine("Immetti il formato corretto (gg/mm/yyyy)" + e.Message+ "\n");
                         }
                         obj.setSc(dt);
-                        Console.WriteLine("Inserisci una importanza e premi invio:\n");
-                        Int32.TryParse(Console.ReadLine(), out int tmp);
+                        int tmp;
+                        do
+                        {
+                            Console.WriteLine("Inserisci un' importanza e premi invio:\n");
+                        }
+                        while (!Int32.TryParse(Console.ReadLine(), out tmp));
                         obj.setImportanza((byte)tmp);
                         Tasks.Add(obj);
                         Console.WriteLine("Oggetto aggiunto con id: {0}\n", obj.id);
